@@ -1,0 +1,6 @@
+.block {
+  border: 3px solid gray;
+  background-color: blueviolet;
+  width: 500px;
+  height: 500px;
+}
