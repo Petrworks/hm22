@@ -27,3 +27,21 @@ console.log(`You wrote: \"${string}\" \\ it's length ${
   string.length
 }\nThis is your big string: ${string.toUpperCase()}
   \t\t\t\tAnd this is a small one: \"${string.toLowerCase()}\"`);
+
+/*  4) В одній пачці папіру 500 листів. Офіс використовує 1200 листів папіру щотиджня. Яку найменшу кількість пачок папіру треба закупити в офіс, щоб вистачило на 8 тижнів?
+ Результат відобразіть в консолі (команда console.log()). */
+
+const sheetsInReamPaper = 500;
+const consumptionPerWeek = 1200;
+const weeksAmount = 8;
+
+sum = (consumptionPerWeek / sheetsInReamPaper) * 8;
+
+console.log(Math.ceil(sum));
+
+/* 5) Напишіть програму, яка рахує скільки порібно заплатити відсоткі від суми по кредиту. Відсоток і суму задає користувач (команда prompt()), результат виводимо в консоль (команда console.log()). Враховуєте, що користувач може відправити 10 або 10.5%. */
+
+const percent = prompt('Enter your percent');
+const sum = prompt('Enter your sum');
+
+console.log((sum * parseFloat(percent)) / 100);
