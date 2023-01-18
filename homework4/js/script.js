@@ -47,3 +47,24 @@ if (numPi > Math.PI) {
   console.log(`You entered: ${numPi} 
   It's a wrong data`);
 }
+/* 3) Напишіть програму, яка пропонує користувачу ввести пароль і перевіряє, чи є ций пароль надійним за наступними умовами:
+
+Пароль повинен бути не менше шести символів;
+Пароль не повинен бути рівним строкам qwerty чи 123456;
+Пароль повинен мати хоча б одну велику літеру.
+Якщо всі умови виконані, виведіть в консоль повідомлення "Strong".
+
+Якщо пароль має хоча б одну велику літеру але складається з п'яти символів, виведіть в консоль повідомлення "Middle".
+У всіх інших випадках, виведіть в консоль повідомлення "Weak". */
+
+const password = prompt('Enter password');
+
+if (password !== 'qwerty' && password !== '123456' && password !== '') {
+  if (password.length >= 6 && password !== password.toLowerCase()) {
+    console.log(`Your password are Strong`);
+  } else if (password.length === 5 || password !== password.toLowerCase()) {
+    console.log(`Your password are Middle`);
+  } else {
+    console.log(`Your password are Weak`);
+  }
+}
