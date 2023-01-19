@@ -6,11 +6,7 @@
 const busNum = +prompt();
 switch (busNum) {
   case 7:
-    console.log(`\"You can go\"`);
-    break;
   case 115:
-    console.log(`\"You can go\"`);
-    break;
   case 255:
     console.log(`\"You can go\"`);
     break;
@@ -36,7 +32,7 @@ const numPi = prompt();
 
 if (numPi > Math.PI) {
   console.log(`You entered: ${numPi} 
-  It's greater then PI: true`);
+  It's greater then PI: ${numPi > Math.PI}`);
 } else if (numPi < Math.PI) {
   console.log(`You entered: ${numPi} 
   It's less then PI: false`);
