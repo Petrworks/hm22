@@ -18,7 +18,7 @@ console.log(str);
 /* 2) Сформуйте строку '.#.#.#.#.#.#.#' за допомогою циклу for, де необхідну кількість повторів символів '.#' задає користувач через команду prompt(). */
 
 const value = prompt();
-let symbol = '.#';
+let symbol = '';
 
 for (let i = 1; i <= value; i++) {
   symbol += '.#';
