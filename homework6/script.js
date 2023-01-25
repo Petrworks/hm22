@@ -46,25 +46,25 @@
     Якщо number === 100500, то виведе 'positive, length: 6, sum: 6'
     Если number === -50, то виведе 'negative, length: 2'
 */
+{
+  const number = prompt('Enter your number');
 
-const number = prompt('Enter your number');
-
-if (number.length && isFinite(number)) {
-  let sum = 0;
-  if (number > 0) {
-    for (let i = 0; i <= number.length - 1; i++) {
-      sum += Number(number[i]);
+  if (number.length && isFinite(number)) {
+    let sum = 0;
+    if (number > 0) {
+      for (let i = 0; i <= number.length - 1; i++) {
+        sum += Number(number[i]);
+      }
+      console.log(`positive, length: ${number.length}, sum: ${sum}`);
+    } else if (number === '0') {
+      console.log(`0, length: ${number.length}`);
+    } else if (number < 0) {
+      console.log(`negative, length: ${number.length - 1}`);
     }
-    console.log(`positive, length: ${number.length}, sum: ${sum}`);
-  } else if (number === 0) {
-    console.log(`0, length: ${number.length}`);
-  } else if (number < 0) {
-    console.log(`negative, length: ${number.length - 1}`);
+  } else {
+    console.log('Not valid data');
   }
-} else {
-  console.log('Not valid data');
 }
-
 /*
   3) Відомо, что подорож на Мальдиви коштує 3000$, а купити нові AirPods - 300$.
   Напишіть програму, яка питає у користувача число (в $) та
@@ -76,6 +76,24 @@ if (number.length && isFinite(number)) {
     Якщо money === 3200.50$, то виведе 'You can go on vacation or buy AirPods! What are you waiting for?';
     Якщо money === 4300.53, то виведе 'You have enough money for everything. WOW!'
 */
+
+const number = prompt('Enter your amount');
+
+if (number.length && parseInt(number)) {
+  if (parseInt(number) < 300) {
+    console.log("You can't do anything. I'm sorry :(");
+  } else if (parseInt(number) === 300 && parseInt(number) < 3000) {
+    console.log('You can buy only AirPods');
+  } else if (parseInt(number) >= 3000 && parseInt(number) < 4000) {
+    console.log(
+      'You can go on vacation or buy AirPods! What are you waiting for?'
+    );
+  } else if (parseInt(number) >= 4000) {
+    console.log('You have enough money for everything. WOW!');
+  }
+} else {
+  console.log('Invalid data');
+}
 
 /*
   4) Напишіть програму, яка питає у користувача число,
@@ -109,7 +127,7 @@ if (number.length && isFinite(number)) {
     }
     console.log(str);
   } else {
-    console.error('Not valid data');
+    console.error('Invalid data');
   }
 }
 
