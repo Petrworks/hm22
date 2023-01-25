@@ -13,7 +13,13 @@
 {
   const seconds = prompt('Enter seconds');
 
-  if (seconds.length && isFinite(seconds) && !(Number(seconds) % 1) && seconds >= 0 && seconds < 60) {
+  if (
+    seconds.length &&
+    isFinite(seconds) &&
+    !(Number(seconds) % 1) &&
+    seconds >= 0 &&
+    seconds < 60
+  ) {
     if (seconds >= 0 && seconds < 15) {
       console.log(1);
     } else if (seconds >= 15 && seconds < 30) {
@@ -41,6 +47,24 @@
     Если number === -50, то виведе 'negative, length: 2'
 */
 
+const number = prompt('Enter your number');
+
+if (number.length && isFinite(number)) {
+  let sum = 0;
+  if (number > 0) {
+    for (let i = 0; i <= number.length - 1; i++) {
+      sum += Number(number[i]);
+    }
+    console.log(`positive, length: ${number.length}, sum: ${sum}`);
+  } else if (number === 0) {
+    console.log(`0, length: ${number.length}`);
+  } else if (number < 0) {
+    console.log(`negative, length: ${number.length - 1}`);
+  }
+} else {
+  console.log('Not valid data');
+}
+
 /*
   3) Відомо, что подорож на Мальдиви коштує 3000$, а купити нові AirPods - 300$.
   Напишіть програму, яка питає у користувача число (в $) та
@@ -56,7 +80,7 @@
 /*
   4) Напишіть програму, яка питає у користувача число,
   виводить на экран всі числа від 1 до цього числа 
-  та возводит в степінь 2 кожне ПАРНЕ його число
+  та возводит в ступінь 2 кожне ПАРНЕ його число
 
   **Приклад:
     Якщо number === 5, то виведе '1 4 3 16 5'
@@ -65,7 +89,12 @@
 {
   const number = prompt('Enter number');
 
-  if (number.length && isFinite(number) && !(Number(number) % 1) && number > 0) {
+  if (
+    number.length &&
+    isFinite(number) &&
+    !(Number(number) % 1) &&
+    number > 0
+  ) {
     let str = '';
     for (let i = 1; i <= number; i++) {
       if (!(i % 2)) {
@@ -98,8 +127,8 @@
 
   upd: Виведіть всю таблицу множення.
 */
-  
-  /*
+
+/*
     6) Напишіть програму, яка питає у користувача символ та число
     і виводить цей символ послідовно, збільшуючи кожен раз на 1, поки 
     кількість символів в рядку не буде дорівнювати цьому числу.
@@ -120,8 +149,8 @@
       @@@@@
       @@@@@@
   */
-  
-  /*
+
+/*
     7) Напишіть цикл, який заповнює строку value числами від 1000 до 2000
     і додайте до кожного числа символи '&#'. Результат первірте в браузері,
     запустив index.html файл.
@@ -131,15 +160,15 @@
   
     upd: Перевірте також код для значень від 7000 до 10000
   */
-  
-  let result = document.getElementById('result');
-  let value = '';
-  
-  // your code should be here
-  
-  result.innerHTML = value;
-  
-  /*
+
+let result = document.getElementById('result');
+let value = '';
+
+// your code should be here
+
+result.innerHTML = value;
+
+/*
     8) Напишіть програму, яка питає у користувача число і повертає його
     в перевернутому виді. Програма повина працювати і для додатніх і для
     від'ємних чисел.
@@ -155,7 +184,7 @@
   const number = prompt('Enter number');
 
   if (number.length && isFinite(number) && !(Number(number) % 1)) {
-    let reversedNumber = ''
+    let reversedNumber = '';
     if (number >= 0) {
       for (let i = number.length - 1; i >= 0; i--) {
         reversedNumber += number.charAt(i);
@@ -171,16 +200,15 @@
     console.error('Not valid data');
   }
 }
-  
-  /*
+
+/*
     9) Напишіть програму, яка питає у користувача число і виводить на
     экран ряд Фібоначі, який має стільки чисел, скільки запросив користувач.
   
     upd: Вирішити цю задачу через цикл з порожнім тілом.
   */
-  
-  
-  /*
+
+/*
     10) Напишіть програму, яка питає у користувача число (number) і підраховує 
     максимальне число n ітерацій за формулою 1 + 2 + ... + n <= number.
   
@@ -188,4 +216,3 @@
       Якщо number === 5, то виведе 2 // 1 + 2 + 3 <= 5
       Якщо number === 8, то виведе 3
   */
-  
