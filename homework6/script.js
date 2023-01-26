@@ -146,6 +146,25 @@ if (number.length && parseInt(number)) {
   upd: Виведіть всю таблицу множення.
 */
 
+const number1 = prompt('Enter value from 1 to 9');
+
+if (number1.length && Number(number1) && number1 <= 9) {
+  for (let i = 1; i <= 9; i++) {
+    console.log(`${i} * ${number1} = ${number1 * i}`);
+  }
+  if (number1 > 9) {
+    console.log('Enter smaller value');
+  }
+} else {
+  console.log('Not valid data');
+}
+
+for (let i = 1; i <= 10; i++) {
+  for (let j = 1; j <= 10; j++) {
+    console.log(`${i} * ${j} = ${i * j}`);
+  }
+}
+
 /*
     6) Напишіть програму, яка питає у користувача символ та число
     і виводить цей символ послідовно, збільшуючи кожен раз на 1, поки 
