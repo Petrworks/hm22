@@ -187,9 +187,19 @@ for (let i = 1; i <= 10; i++) {
       @@@@@@
   */
 
+const valueSymb = prompt('Enter value');
+let symbol = prompt('Enter symbol');
+
+for (let i = 1; i <= valueSymb; i++) {
+  for (let j = 2; j <= i; j++) {
+    symbol += symbol;
+  }
+  console.log(symbol);
+}
+
 /*
     7) Напишіть цикл, який заповнює строку value числами від 1000 до 2000
-    і додайте до кожного числа символи '&#'. Результат первірте в браузері,
+    і додайте до кожного числа символи '&#'. Результат перевірте в браузері,
     запустив index.html файл.
   
       Формат відповіді:
@@ -201,8 +211,9 @@ for (let i = 1; i <= 10; i++) {
 let result = document.getElementById('result');
 let value = '';
 
-// your code should be here
-
+for (let i = 1000; i <= 2000; i++) {
+  value += '&#' + i;
+}
 result.innerHTML = value;
 
 /*
@@ -245,6 +256,11 @@ result.innerHTML = value;
     upd: Вирішити цю задачу через цикл з порожнім тілом.
   */
 
+const numberFib = prompt('Enter number');
+
+for (i = 1; i <= numberFib; i++) {}
+console.log(`${i}, ${(i = i - 1 + (i - 2))}`);
+
 /*
     10) Напишіть програму, яка питає у користувача число (number) і підраховує 
     максимальне число n ітерацій за формулою 1 + 2 + ... + n <= number.
@@ -253,3 +269,10 @@ result.innerHTML = value;
       Якщо number === 5, то виведе 2 // 1 + 2 + 3 <= 5
       Якщо number === 8, то виведе 3
   */
+const numberIter = prompt('Enter number');
+let n = 0;
+
+for (i = 1; i <= numberIter; i++) {
+  n += 1;
+}
+console.log(`${(n += i <= 5)}`);
