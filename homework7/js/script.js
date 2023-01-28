@@ -22,5 +22,31 @@ for (let i = 0; i <= array.length; i++) {
 let array2 = [];
 const sizeArr = prompt();
 for (i = 0; i < sizeArr; i++) {
-  array2.push(Math.round(Math.random() * sizeArr));
+  array2.push(Math.round(Math.random() * 10));
 }
+console.log(array2);
+
+let array2Copy = [...array2];
+for (i = 0; i <= array2Copy.length; i += 3) {
+  array2Copy[i] = array2Copy[i] * 3;
+}
+console.log(array2Copy); // ['Karan Duffy', 'Brax Dalton', 'Jody Lam', ...] */
+
+/* а) Створіть массив, який складається з повних імен всіх співробітників.
+const fullNames = /* your code */
+
+let fullNames = [];
+
+for (let i = name; i <= surname; i++) {
+  fullNames[i] = employee[i];
+}
+
+console.log(fullNames);
+
+// const student2 = {
+//   ...student, // копіювання за значенням
+//   marks: {
+//     ...student.marks, // копіювання за значенням
+//   },
+// };
+// student2.firstName = 'Anna';
