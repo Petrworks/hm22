@@ -27,26 +27,27 @@ for (i = 0; i < sizeArr; i++) {
 console.log(array2);
 
 let array2Copy = [...array2];
-for (i = 0; i <= array2Copy.length; i += 3) {
+for (let i = 0; i <= array2Copy.length; i += 3) {
   array2Copy[i] = array2Copy[i] * 3;
 }
-console.log(array2Copy); // ['Karan Duffy', 'Brax Dalton', 'Jody Lam', ...] */
+console.log(array2Copy);
 
 /* а) Створіть массив, який складається з повних імен всіх співробітників.
-const fullNames = /* your code */
+const fullNames = /* your code / ['Karan Duffy', 'Brax Dalton', 'Jody Lam', ...] */
 
-let fullNames = [];
+const fullNames = [];
 
-for (let i = name; i <= surname; i++) {
+for (let i = 0; i <= employee.length; i++) {
   fullNames[i] = employee[i];
 }
 
 console.log(fullNames);
 
-// const student2 = {
-//   ...student, // копіювання за значенням
-//   marks: {
-//     ...student.marks, // копіювання за значенням
-//   },
-// };
-// student2.firstName = 'Anna';
+/* b) Знайдіть середнє значення всіх зарплат співробітників.
+const average = /* some number */
+
+let money = 0;
+for (let i = 0; i <= 80; i++) {
+  money += i;
+}
+console.log(money);

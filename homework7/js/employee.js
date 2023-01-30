@@ -99,4 +99,4 @@ const employee = [
     gender: 'male',
   },
 ];
-const arr = JSON.parse(JSON.stringify(employee));
+employee.length;
