@@ -37,8 +37,8 @@ const fullNames = /* your code / ['Karan Duffy', 'Brax Dalton', 'Jody Lam', ...]
 
 const fullNames = [];
 
-for (let i = 0; i <= employee.length; i++) {
-  fullNames[i] = employee[i];
+for (let i = 0; i < employee.length; i++) {
+  fullNames[i] = employee[i].name + employee[i].surname;
 }
 
 console.log(fullNames);
@@ -47,6 +47,7 @@ console.log(fullNames);
 const average = /* some number */
 
 let money = 0;
+
 for (let i = 0; i <= 80; i++) {
   money += i;
 }
