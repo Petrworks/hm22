@@ -77,18 +77,20 @@
     Якщо money === 4300.53, то виведе 'You have enough money for everything. WOW!'
 */
 
-const number = prompt('Enter your amount');
+const number = parseInt(prompt('Enter your amount'));
+const airport = 300;
+const maldives = 3000;
 
-if (number.length && parseInt(number)) {
-  if (parseInt(number) < 300) {
+if (number.length) {
+  if (number < airport) {
     console.log("You can't do anything. I'm sorry :(");
-  } else if (parseInt(number) === 300 && parseInt(number) < 3000) {
+  } else if (number === airport && number < maldives) {
     console.log('You can buy only AirPods');
-  } else if (parseInt(number) >= 3000 && parseInt(number) < 4000) {
+  } else if (number >= maldives && number < 4000) {
     console.log(
       'You can go on vacation or buy AirPods! What are you waiting for?'
     );
-  } else if (parseInt(number) >= 4000) {
+  } else if (number >= 4000) {
     console.log('You have enough money for everything. WOW!');
   }
 } else {
@@ -257,9 +259,16 @@ result.innerHTML = value;
   */
 
 const numberFib = prompt('Enter number');
+let first = 1;
+let second = 1;
+let third;
 
-for (i = 1; i <= numberFib; i++) {}
-console.log(`${i}, ${(i = i - 1 + (i - 2))}`);
+for (i = 3; i <= numberFib; i++) {
+  third = first + second;
+  first = second;
+  second = third;
+  console.log(`${first}, ${second}, ${third} `);
+}
 
 /*
     10) Напишіть програму, яка питає у користувача число (number) і підраховує 
@@ -270,9 +279,12 @@ console.log(`${i}, ${(i = i - 1 + (i - 2))}`);
       Якщо number === 8, то виведе 3
   */
 const numberIter = prompt('Enter number');
-let n = 0;
+let sum = 0;
 
 for (i = 1; i <= numberIter; i++) {
-  n += 1;
+  sum += i;
+  if (sum >= numberIter) {
+    break;
+  }
 }
-console.log(`${(n += i <= 5)}`);
+console.log(`${i - 1}`);
