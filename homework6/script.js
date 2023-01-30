@@ -194,7 +194,7 @@ let symbol = prompt('Enter symbol');
 
 for (let i = 1; i <= valueSymb; i++) {
   for (let j = 2; j <= i; j++) {
-    symbol += symbol;
+    symbol = i;
   }
   console.log(symbol);
 }
