@@ -78,19 +78,19 @@
 */
 
 const number = parseInt(prompt('Enter your amount'));
-const airport = 300;
+const airpods = 300;
 const maldives = 3000;
 
 if (number.length) {
-  if (number < airport) {
+  if (number < airpods) {
     console.log("You can't do anything. I'm sorry :(");
-  } else if (number === airport && number < maldives) {
+  } else if (number >= airpods && number < maldives) {
     console.log('You can buy only AirPods');
-  } else if (number >= maldives && number < 4000) {
+  } else if (number >= maldives && number < maldives + airpods) {
     console.log(
       'You can go on vacation or buy AirPods! What are you waiting for?'
     );
-  } else if (number >= 4000) {
+  } else if (number >= maldives + airpods) {
     console.log('You have enough money for everything. WOW!');
   }
 } else {
@@ -278,13 +278,16 @@ for (i = 3; i <= numberFib; i++) {
       Якщо number === 5, то виведе 2 // 1 + 2 + 3 <= 5
       Якщо number === 8, то виведе 3
   */
+
 const numberIter = prompt('Enter number');
 let sum = 0;
 
-for (i = 1; i <= numberIter; i++) {
-  sum += i;
-  if (sum >= numberIter) {
-    break;
+if (numberIter.length && numberIter.isFinite) {
+  for (i = 1; i <= numberIter; i++) {
+    sum += i;
+    if (sum > numberIter) {
+      break;
+    }
   }
 }
 console.log(`${i - 1}`);
