@@ -283,11 +283,11 @@ const numberIter = prompt('Enter number');
 let sum = 0;
 
 if (numberIter.length && numberIter.isFinite) {
-  for (i = 1; i <= numberIter; i++) {
+  for (let i = 1; i <= numberIter; i++) {
     sum += i;
     if (sum > numberIter) {
       break;
     }
   }
 }
-console.log(`${i - 1}`);
+console.log(i - 1);
