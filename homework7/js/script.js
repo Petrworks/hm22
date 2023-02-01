@@ -61,10 +61,7 @@ const maxPrivilegesMan = /* firstName lastName */
 let namePrivileg = [];
 
 for (let i = 0; i <= employee.length - 1; i++) {
-  if (
-    employee.isPrivileges === 'isPrivileges: true' &&
-    employee.gender === 'gender: male'
-  ) {
+  if (employee.isPrivileges === 'true' && employee.gender === 'male') {
     namePrivileg[i] = employee[i].name + ' ' + employee[i].surname;
   }
 }
