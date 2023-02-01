@@ -99,4 +99,3 @@ const employee = [
     gender: 'male',
   },
 ];
-employee.length;

@@ -20,7 +20,7 @@ for (let i = 0; i <= array.length; i++) {
 Виведіть новостворений масив в консолі.*/
 
 let array2 = [];
-const sizeArr = prompt();
+const sizeArr = prompt('', 5);
 for (i = 0; i < sizeArr; i++) {
   array2.push(Math.round(Math.random() * 10));
 }
@@ -38,7 +38,7 @@ const fullNames = /* your code / ['Karan Duffy', 'Brax Dalton', 'Jody Lam', ...]
 const fullNames = [];
 
 for (let i = 0; i < employee.length; i++) {
-  fullNames[i] = employee[i].name + employee[i].surname;
+  fullNames[i] = employee[i].name + ' ' + employee[i].surname;
 }
 
 console.log(fullNames);
@@ -46,9 +46,51 @@ console.log(fullNames);
 /* b) Знайдіть середнє значення всіх зарплат співробітників.
 const average = /* some number */
 
-let money = 0;
+let sumSalary = 0;
 
-for (let i = 0; i <= 80; i++) {
-  money += i;
+for (let i = 0; i < employee.length; i++) {
+  sumSalary += employee[i].salary;
 }
-console.log(money);
+const average = sumSalary / employee.length;
+console.log(average);
+
+/* с) Виведіть в консоль імʼя чоловіка-пільговика (ключ isPrivileges=true) з самою великою зарплатою.
+
+const maxPrivilegesMan = /* firstName lastName */
+
+let namePrivileg = [];
+
+for (let i = 0; i <= employee.length - 1; i++) {
+  if (
+    employee.isPrivileges === 'isPrivileges: true' &&
+    employee.gender === 'gender: male'
+  ) {
+    namePrivileg[i] = employee[i].name + ' ' + employee[i].surname;
+  }
+}
+console.log(namePrivileg);
+const maxPrivilegesMan = employee[i].name + ' ' + employee[i].surname;
+console.log(maxPrivilegesMan);
+
+/* e) Виведіть в консоль інформацію, скільки всього заробили співробітники за весь час роботи в одній строці. Формат відповіді: <імʼя прізвище> - <сума>.
+
+const result = /* your code 
+ Karan Duffy - 10100
+Brax Dalton - 14400
+Jody Lam - 1440 */
+{
+  let fullNames = [];
+
+  for (let i = 0; i < employee.length; i++) {
+    fullNames[i] =
+      employee[i].name +
+      ' ' +
+      employee[i].surname +
+      ' ' +
+      '-' +
+      ' ' +
+      employee[i].salary * employee[i].workExperience;
+  }
+  const result = fullNames.toString();
+  console.log(result);
+}
