@@ -27,7 +27,7 @@ for (i = 0; i < sizeArr; i++) {
 console.log(array2);
 
 let array2Copy = [...array2];
-for (let i = 1; i <= array2Copy.length; i += 3) {
+for (let i = 2; i <= array2Copy.length; i += 3) {
   array2Copy[i] = array2Copy[i] * 3;
 }
 console.log(array2Copy);
@@ -70,7 +70,7 @@ for (let i = 0; i <= employee.length - 1; i++) {
   }
 }
 const maxPrivilegesMan = namePrivileg + '-' + max;
-console.log(maxPrivilegesMan);
+console.log(namePrivileg + '-' + max);
 
 /* 3e) Виведіть в консоль інформацію, скільки всього заробили співробітники за весь час роботи в одній строці. Формат відповіді: <імʼя прізвище> - <сума>.
 
