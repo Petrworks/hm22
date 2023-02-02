@@ -20,14 +20,14 @@ for (let i = 0; i <= array.length; i++) {
 Виведіть новостворений масив в консолі.*/
 
 let array2 = [];
-const sizeArr = prompt('', 5);
+const sizeArr = prompt('Enter number');
 for (i = 0; i < sizeArr; i++) {
-  array2.push(Math.round(Math.random() * 10));
+  array2[i] = Math.round(Math.random() * 10);
 }
 console.log(array2);
 
 let array2Copy = [...array2];
-for (let i = 0; i <= array2Copy.length; i += 3) {
+for (let i = 1; i <= array2Copy.length; i += 3) {
   array2Copy[i] = array2Copy[i] * 3;
 }
 console.log(array2Copy);
