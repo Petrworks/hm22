@@ -83,15 +83,6 @@ Initial number is: 100500;
 Attempts: 11;
 Final number is: 49.072265625; 
 
-let n = 100;
-function div(n) {
-  let iterations = 0;
-  while (n >= 10) {
-    n /= 2;
-    ++iterations;
-  } 
-  return iterations;
-}
 */
 
 let numDiv = parseInt(prompt('Enter number'));
