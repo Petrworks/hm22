@@ -11,10 +11,11 @@ function parseDate(date) {
   const hours = date.getHours();
   const min = date.getMinutes();
   const second = date.getSeconds();
-  let options = { weekday: 'long', hour: '2-digit' };
+  let options = { weekday: 'long' };
+  let optionsHour = { hour: '2-digit' };
 
   return `Today is: ${new Intl.DateTimeFormat('en-US', options).format(date)}.
-  Current time is: ${new Intl.DateTimeFormat('en-Us', options).format(
+  Current time is: ${new Intl.DateTimeFormat('en-Us', optionsHour).format(
     date
   )} : ${'0' + min} : ${'0' + second}
   `;
@@ -29,3 +30,82 @@ console.log(parseDate(dateOf));
 
 // log(5, 4);
 // log(5, 7);
+
+/* 2) Напишіть функцію getRandomInteger(min, max), яка повертає ціле число в заданому діапазоні чисел, які передані в аргументах функції.
+
+Напишіть програму, яка питає у користувача ціле число і порівнює його зі створеним числом за допомогою функції getRandomInteger.
+
+Якщо користувач ввів невірне число, виведіть в консоль повідомлення про помилку.
+Якщо числа співпадають, вивести в консоль Good work, якщо ні - Not matched. */
+
+function getRandomInteger(min, max) {
+  let randomInteg = Math.floor(Math.random() * (max - min) + min);
+
+  const value = prompt('Enter number', '3');
+
+  // if (value.length && isFinite.value) {
+  if (Number(value) === randomInteg) {
+    console.log(value);
+    console.log(`Good work`);
+  } else if (Number(value) !== randomInteg) {
+    console.log(`Not matched`);
+    // }
+    console.log(randomInteg);
+  }
+}
+getRandomInteger(3, 4);
+
+/* 3) Напишіть функцію getDecimalNumber(arr), яка приймає в якості аргументу масив з чисел 0 або 1, і повертає число в десятичній системі еквівалентне заданому.
+
+Наприклад, массив [0, 0, 0, 1] розглядається як 0001 і дорівнює 1.
+
+Приклади для перевірки:
+getDecimalNumber([0, 0, 0, 1]) // 1
+getDecimalNumber([0, 0, 1, 0]) // 2
+getDecimalNumber([1, 1, 1, 1]) // 15
+getDecimalNumber([1, 1, 1, 0, 0, 1]) // 57*/
+
+const arr = [0, 0, 0, 1];
+
+function getDecimalNumber(arr) {
+  const num = arr.toString;
+  let stringNum = parseInt(num, 10);
+
+  console.log(stringNum);
+  return stringNum;
+}
+// getDecimalNumber([0, 0, 0, 1]);
+
+/* 4) Напишіть програму, яка питає у користувача число і ділить його на 2 стільки разів, поки воно не буде <= 50. Виведіть в консоль фінальне число і кількість операцій, які знадобились, щоб досягти цього числа.
+
+Приклад виконання програми для number = 100500;
+Initial number is: 100500;
+Attempts: 11;
+Final number is: 49.072265625; 
+
+let n = 100;
+function div(n) {
+  let iterations = 0;
+  while (n >= 10) {
+    n /= 2;
+    ++iterations;
+  } 
+  return iterations;
+}
+*/
+
+let numDiv = parseInt(prompt('Enter number'));
+
+function resultDiv(numDiv) {
+  let iterationNum = 0;
+
+  if (numDiv.length && numDiv >= 50) {
+    while (numDiv >= 50) {
+      numDiv /= 2;
+      ++iterationNum;
+    }
+    console.log(`Initial number is: ${numDiv};
+    Attempts: ${iterationNum}`);
+  }
+  return resultDiv;
+}
