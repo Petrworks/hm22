@@ -66,31 +66,31 @@ getDecimalNumber([1, 1, 1, 1]) // 15
 getDecimalNumber([1, 1, 1, 0, 0, 1]) // 57*/
 
 const arr = [0, 0, 0, 1];
+let i = '';
 
-function getDecimalNumber(arr) {
-  const num = arr.toString;
-  let stringNum = parseInt(num, 10);
-
-  console.log(stringNum);
-  return stringNum;
+function getDecimalNumber() {
+  let stringNum = '';
+  for (let i of arr) {
+    stringNum += i;
+  }
+  console.log(parseInt(stringNum, 10));
+  return parseInt(stringNum, 10);
 }
-// getDecimalNumber([0, 0, 0, 1]);
+getDecimalNumber(arr);
 
 /* 4) Напишіть програму, яка питає у користувача число і ділить його на 2 стільки разів, поки воно не буде <= 50. Виведіть в консоль фінальне число і кількість операцій, які знадобились, щоб досягти цього числа.
 
 Приклад виконання програми для number = 100500;
 Initial number is: 100500;
 Attempts: 11;
-Final number is: 49.072265625; 
-
-*/
+Final number is: 49.072265625; */
 
 let numDiv = parseInt(prompt('Enter number'));
 
-function resultDiv(numDiv) {
+function resultDiv() {
   let iterationNum = 0;
 
-  if (numDiv.length && numDiv >= 50) {
+  if (numDiv >= 50) {
     while (numDiv >= 50) {
       numDiv /= 2;
       ++iterationNum;
@@ -100,3 +100,4 @@ function resultDiv(numDiv) {
   }
   return resultDiv;
 }
+resultDiv(numDiv);
