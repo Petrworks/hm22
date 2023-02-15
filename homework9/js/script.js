@@ -33,6 +33,7 @@ console.log(result); // [1,2, 'qwerty']; */
 function filterArray(arr3) {
   let arrFilter = new Array(arr3.filter((item) => Boolean(item) == true));
   console.log(arrFilter);
+  return arrFilter;
 }
 filterArray([0, 1, 2, null, undefined, 'qwerty', false, NaN]);
 
@@ -42,4 +43,9 @@ let array = [1, 2, 3, 4, 5];
 let result = spliceFour(array);
 console.log(result); // [1, 2, 3, 'JavaScript', 5]; */
 
-function spliceFour(arr4) 
+function spliceFour(arr4) {
+  let arrSplice = new Array(arr4.splice(3, 1, 'JavaScript'));
+  console.log(arr4);
+  return arrSplice;
+}
+spliceFour([1, 2, 3, 4, 5]);
