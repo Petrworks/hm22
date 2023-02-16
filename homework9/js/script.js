@@ -9,6 +9,7 @@ function fillArray(arraySize, value) {
 
   console.log(arr);
   return arr;
+  return arr;
 }
 fillArray(5, 'ttt');
 
