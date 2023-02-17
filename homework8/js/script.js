@@ -65,16 +65,18 @@ getDecimalNumber([0, 0, 1, 0]) // 2
 getDecimalNumber([1, 1, 1, 1]) // 15
 getDecimalNumber([1, 1, 1, 0, 0, 1]) // 57*/
 
-const arr = [0, 0, 0, 1];
-let i = '';
+const arr = [1, 1, 1, 0, 0, 1];
+// let i = '';
 
 function getDecimalNumber() {
-  let stringNum = '';
-  for (let i of arr) {
-    stringNum += i;
+  let stringNum = 0;
+  for (let i = 0; i <= arr.length - 1; i++) {
+    stringNum += 2 ** (arr.length - 1 - i) * arr[i];
+    // stringNum += i;
   }
-  console.log(parseInt(stringNum, 10));
-  return parseInt(stringNum, 10);
+  console.log(stringNum);
+  // console.log(parseInt(stringNum, 10));
+  // return parseInt(stringNum, 10);
 }
 getDecimalNumber(arr);
 
