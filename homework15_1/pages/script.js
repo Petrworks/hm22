@@ -14,11 +14,16 @@ const value = prompt();
 
 function addInput() {
   const input = document.createElement('input');
-  const div = document.getElement('');
+  const div = document.querySelector('input-item');
   div.appendChild(input);
 
-  input.before(button);
-  input.classList.add('input-item');
-  input.setAttribute('value', `Input ${index}`);
-  input.lastChild.classList.add('margin-zero');
+  const button = querySelector('.button');
+  div.before(button);
+  div.setAttribute('value', `Input ${index}`);
+  const margin = div.querySelector('input-item:lastchild');
+  margin.classList.add = '.margin-zero';
+  const bgColor = div.querySelectorAll('input-color');
+  bgColor = div.classList.add('input-color:nth-child(odd)');
+  bgColor.style.backgroundColor = 'yellow';
 }
+addInput(value);
