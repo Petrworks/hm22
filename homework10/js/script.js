@@ -14,11 +14,11 @@ console.log(buffer()); // AXYZ */
 function createBuffer() {
   let text = '';
   return function buffer(value) {
-    if (typeof value === 'string') text += value;
+    if (typeof value === 'string') return (text += value);
     if (value === undefined) {
       return text;
     } else {
-      console.log('wrong string');
+      return console.log('wrong string');
     }
     return text;
   };
