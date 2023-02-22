@@ -15,7 +15,7 @@ function createBuffer() {
   let text = '';
   return function buffer(value) {
     if (typeof value === 'string') text += value;
-    if (value === '') {
+    if (value === undefined) {
       return text;
     } else {
       console.log('wrong string');
