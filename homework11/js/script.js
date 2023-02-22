@@ -4,11 +4,13 @@ let colors = joinColor(string1, string2, string3); // Aquamarine Black Blue Brow
 
 let string1 = 'Aquamarine Black Blue Brown Chocolate ';
 let string2 = 'Green Lime Olive Orange Purple ';
-let string3 = 'Red Tomato Violet White Yellow';
+let string3 = 'Red Tomato Violet White Yellow 111';
 
-function joinColor(...arguments) {
-  let sumString = arguments.concat();
-  return sumString;
+function joinColor(string1, string2, string3, ...arguments) {
+  let concatString = string1.concat(string2, string3, ...arguments);
+  // let concatString;
+  // for (let arg of arguments) concatString += arg;
+  return concatString;
 }
-let colors = joinColor(string1, string2, string3, 'fsfg');
+let colors = joinColor(string1, string2, string3, 'gdgdgg');
 console.log(colors);
