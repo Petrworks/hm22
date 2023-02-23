@@ -42,19 +42,16 @@ console.log(user.signIn("a")); // Password is incorrect
 console.log(user.signIn("qwerty")); // Sign in success for billy */
 
 function signUp(userName, password) {
-  const checkPass = {
+  return {
     userName: userName,
     signIn: function (newPassword) {
       if (password === newPassword) {
-        console.log(`Sign in success for ${userName}`);
-        return checkPass;
+        return `Sign in success for ${userName}`;
       } else {
-        console.log('Password is incorrect');
-        return checkPass;
+        return 'Password is incorrect';
       }
     },
   };
-  return checkPass;
 }
 const user = signUp('billy', 'qwerty');
 console.log(user.signIn('a'));
