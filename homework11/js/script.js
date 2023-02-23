@@ -6,11 +6,10 @@ let string1 = 'Aquamarine Black Blue Brown Chocolate ';
 let string2 = 'Green Lime Olive Orange Purple ';
 let string3 = 'Red Tomato Violet White Yellow';
 
-function joinColor(string1, string2, string3, ...arguments) {
-  let concatString = string1.concat(string2, string3, ...arguments);
-  // let concatString;
-  // for (let arg of arguments) concatString += arg;
-  return concatString;
+function joinColor(...arguments) {
+  // let concatString = arguments;
+  let joinString = arguments.join('');
+  return joinString;
 }
 let colors = joinColor(string1, string2, string3);
 console.log(colors);
@@ -54,9 +53,12 @@ console.log(result);
 /* e) Створіть функцію splitColors(colors, numbers), яка розбиває вхідну строку на окремі слова і повертає тільки ті слова, кількість літер яких не менше ніж число, яке передане в якості другого аргументу функції. */
 
 function splitColors(colors, numbers) {
-  let splits = colors.split(colors);
-  // splits = colors.filter((color) => color.length >= numbers);
+  let splits = colors
+    .split(colors)
+    .filter((item) => item.length >= numbers)
+    .toString();
 
+  console.log(splits);
   return splits;
 }
 let filteredColors = splitColors(string1, 6);
