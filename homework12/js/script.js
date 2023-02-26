@@ -3,7 +3,7 @@
 const { name, color } = vegetable;
 console.log(`${name}s are usually ${color}`); */
 
-const vegetable = {
+let vegetable = {
   name: 'onion',
   color: 'white',
 };
@@ -35,23 +35,29 @@ const veget2 = {
   name: 'tomato',
   color: 'red',
 };
-let vegetables = [veget1, veget2, vegetable];
+let vegetables = [veget1, veget2];
 const [cucumber, tomato] = vegetables;
 
 console.log(vegetables);
 console.log(`${cucumber.name}s are usually ${cucumber.color}`);
 console.log(`${tomato.name}s are usually ${tomato.color}`);
 
-const [firstVegetable, ...otherVegetables] = vegetables;
-console.log(firstVegetable.name === cucumber.name); // true
+/* Використовуючи деструктуризацію можно поділити масив на необхідні частини. Наприклад, записати в змінну окремо об'єкт onion, а інші овочі, які залишилися - в новий масив otherVegetables.*/
 
+vegetables.unshift(vegetable);
+
+const [firstVegetable, ...otherVegetables] = vegetables;
+console.log(firstVegetable.name === vegetable.name); // true
+
+const veget3 = {
+  name: 'pumpkin',
+  color: 'orange',
+};
+const pumpkin = veget3;
+vegetables[3] = veget3;
 // const [, , pumpkin] = vegetables;
-// const pumpkin = {
-//   name: 'pumpkin',
-//   color: 'orange',
-// };
-// console.log(vegetables);
-// console.log(`${pumpkin.name}s are usually ${pumpkin.color}`); //pubpkins are usually orange
+console.log(vegetables);
+console.log(`${pumpkin.name}s are usually ${pumpkin.color}`); //pubpkins are usually orange
 
 /* 4) На основі прикладів, які вказані вище, створіть масив об'єктів students, виведіть 2й елемент масиву і довжину масиву елементів, що залишилися. */
 
