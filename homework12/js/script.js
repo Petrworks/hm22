@@ -7,8 +7,7 @@ const vegetable = {
   name: 'onion',
   color: 'white',
 };
-// const name = onion.onion;
-// const color = onion.white;
+
 const { name, color } = vegetable;
 console.log(`${name}s are usually ${color}`);
 
@@ -28,22 +27,43 @@ const [cucumber, tomato] = vegetables;
 console.log(`${cucumber.name}s are usually ${cucumber.color}`);
 console.log(`${tomato.name}s are usually ${tomato.color}`); */
 
-{
-  const veget1 = {
-    name: 'cucumber',
-    color: 'green',
-  };
-  const veget2 = {
-    name: 'tomato',
-    color: 'red',
-  };
-  let vegetables = [veget1, veget2];
-  const [cucumber, tomato] = vegetables;
-  // let name = veget1.cucumber;
-  // let color = veget1.green;
-  // let name = veget2.tomato;
-  // let color = veget2.red;
-  console.log(vegetables);
-  console.log(`${cucumber.name}s are usually ${cucumber.color}`);
-  console.log(`${tomato.name}s are usually ${tomato.color}`);
-}
+const veget1 = {
+  name: 'cucumber',
+  color: 'green',
+};
+const veget2 = {
+  name: 'tomato',
+  color: 'red',
+};
+let vegetables = [veget1, veget2, vegetable];
+const [cucumber, tomato] = vegetables;
+
+console.log(vegetables);
+console.log(`${cucumber.name}s are usually ${cucumber.color}`);
+console.log(`${tomato.name}s are usually ${tomato.color}`);
+
+const [firstVegetable, ...otherVegetables] = vegetables;
+console.log(firstVegetable.name === cucumber.name); // true
+
+// const [, , pumpkin] = vegetables;
+// const pumpkin = {
+//   name: 'pumpkin',
+//   color: 'orange',
+// };
+// console.log(vegetables);
+// console.log(`${pumpkin.name}s are usually ${pumpkin.color}`); //pubpkins are usually orange
+
+/* 4) На основі прикладів, які вказані вище, створіть масив об'єктів students, виведіть 2й елемент масиву і довжину масиву елементів, що залишилися. */
+
+let students = [
+  { name: 'Kate', age: 25 },
+  { name: 'Artur', age: 30 },
+  { name: 'Nick', age: 15 },
+  { name: 'Alex', age: 28 },
+  { name: 'Zhenia', age: 45 },
+];
+
+const [Kate, Artur, Nick, Alex, Zhenia] = students;
+console.log(
+  `${Artur.name} is ${Artur.age}, length of students array is ${students.length}`
+);
