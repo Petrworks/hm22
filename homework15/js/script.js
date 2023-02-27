@@ -9,7 +9,7 @@ main.after(footer);
 /* Напишіть функцію, яка питає у користувача дозволу додати картинку (confirm()) і у разу згоди додає картинку на сторінку (посилання на картинку користувач повинен задавати самостійно). */
 
 function confirmAdd() {
-  if (confirm('Do you want add a foto?') == true) {
+  if (confirm('Do you want add a foto?')) {
     const img = document.createElement('img');
     img.src =
       'https://thumbs.dreamstime.com/b/tiger-portrait-horizontal-11392212.jpg';

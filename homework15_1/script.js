@@ -1,5 +1,4 @@
 /* 3) Для цього завдання вам знадобиться файл index.html, який закріплений внизу.
-
 Запросіть у користувача число і додайте в середину форми теги <input> (перед кнопкою Register), кількість яких дорівнює цьому числу.
 
 Вимоги до тегу <input>:
@@ -13,9 +12,12 @@
 const value = prompt();
 
 function addInput() {
-  const input = document.createElement('input');
+  for (let i = 1; i <= value; i++) {
+    let input = document.createElement('input');
+    input += i;
+    div.prepend(input);
+  }
   const div = document.querySelector('input-item');
-  div.appendChild(input);
 
   const button = querySelector('.button');
   div.before(button);
