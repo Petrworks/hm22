@@ -69,7 +69,7 @@ let students = [
   { name: 'Zhenia', age: 45 },
 ];
 
-const [Kate, Artur, Nick, Alex, Zhenia] = students;
+const [, Artur, ...otherStudents] = students;
 console.log(
-  `${Artur.name} is ${Artur.age}, length of students array is ${students.length}`
+  `${Artur.name} is ${Artur.age}, length of students array is ${otherStudents.length}`
 );
