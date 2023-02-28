@@ -98,11 +98,11 @@ format.call(country, [], []); // Ukraine
 format.apply(country, [[], []]); // [Ukraine]
 format.call(country.capital, [], []); // Kyiv
 format.apply(country.capital, [[], []]); // Kyiv
-format.apply(country, [[], []]); // undefined
+format.apply([country], [[], []]); // undefined
 
 /* 4) Що поверне даний код на екран і чому?
  --без аргументів буде повернено undefined
- --з аргументом text буде 'outside' так як при створенні області видимості для logIt було иснувала тільки text = 'outside' */
+ --з аргументом text буде 'outside' так як при створенні області видимості для logIt було записано тільки  text = 'outside' */
 
 var text = 'outside';
 function logIt(d) {
