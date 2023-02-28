@@ -13,9 +13,9 @@ let triangle = {
   bSide: 0,
   cSide: 0,
   setValues: function () {
-    // triangle.aSide = +prompt();
-    // triangle.bSide = +prompt();
-    // triangle.cSide = +prompt();
+    // triangle.aSide = +prompt('', '3');
+    // triangle.bSide = +prompt('', '3');
+    // triangle.cSide = +prompt('', '3');
   },
   getPerimeter: function () {
     let perimeter = this.aSide + this.bSide + this.cSide;
@@ -36,7 +36,9 @@ triangle.setValues(); // for examle 3 3 3
 console.log(triangle.getPerimeter()); // 9
 console.log(triangle.isEqualSides()); // true
 console.log(
-  `It's triangle with sides: ${triangle.aSide}, ${triangle.bSide}, ${triangle.cSide}.\n Perimetr = ${triangle.perimeter}`
+  `It's triangle with sides: ${triangle.aSide}, ${triangle.bSide}, ${
+    triangle.cSide
+  }.\nPerimetr = ${triangle.getPerimeter()}  and isEqualSides - ${triangle.isEqualSides()}`
 );
 
 /* 2) Створіть обʼєкт calculator з методами:
@@ -51,8 +53,8 @@ let calculator = {
   x: 0,
   y: 0,
   read: function () {
-    calculator.x = +prompt();
-    calculator.y = +prompt();
+    // calculator.x = +prompt('', '5');
+    // calculator.y = +prompt('', '2');
   },
   getSum: function () {
     const sum = this.x + this.y;
@@ -75,3 +77,36 @@ let calculator = {
 calculator.read(); // for example 5 2
 console.log(calculator.getSum()); // 7
 console.log(calculator.getDiff()); // 3
+
+/* 3) Даний обʼєкт country і функція format():
+
+Допишіть код так, щоб в консолі зʼявились рядки, які вказані в коментарях. */
+
+var country = {
+  name: 'Ukraine',
+  language: 'ukrainian',
+  capital: {
+    name: 'Kyiv',
+    population: 2907817,
+    area: 847.66,
+  },
+};
+function format(start, end) {
+  console.log(start + this.name + end);
+}
+format.call(country, [], []); // Ukraine
+format.apply(country, [[], []]); // [Ukraine]
+format.call(country.capital, [], []); // Kyiv
+format.apply(country.capital, [[], []]); // Kyiv
+format.apply(country, [[], []]); // undefined
+
+/* 4) Що поверне даний код на екран і чому?
+ --без аргументів буде повернено undefined
+ --з аргументом text буде 'outside' так як при створенні області видимості для logIt було иснувала тільки text = 'outside' */
+
+var text = 'outside';
+function logIt(d) {
+  console.log(d);
+  var text = 'inside';
+}
+logIt(text);
