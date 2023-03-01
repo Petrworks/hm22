@@ -13,9 +13,9 @@ let triangle = {
   bSide: 0,
   cSide: 0,
   setValues: function () {
-    // triangle.aSide = +prompt('', '3');
-    // triangle.bSide = +prompt('', '3');
-    // triangle.cSide = +prompt('', '3');
+    triangle.aSide = +prompt('', '3');
+    triangle.bSide = +prompt('', '3');
+    triangle.cSide = +prompt('', '3');
   },
   getPerimeter: function () {
     let perimeter = this.aSide + this.bSide + this.cSide;
@@ -53,8 +53,8 @@ let calculator = {
   x: 0,
   y: 0,
   read: function () {
-    // calculator.x = +prompt('', '5');
-    // calculator.y = +prompt('', '2');
+    calculator.x = +prompt('', '5');
+    calculator.y = +prompt('', '2');
   },
   getSum: function () {
     const sum = this.x + this.y;
@@ -101,12 +101,11 @@ format.apply(country.capital, [[], []]); // Kyiv
 format.apply([country], [[], []]); // undefined
 
 /* 4) Що поверне даний код на екран і чому?
- --без аргументів буде повернено undefined
- --з аргументом text буде 'outside' так як при створенні області видимості для logIt було записано тільки  text = 'outside' */
+ --буде повернено undefined так як функція запускається та виконується але без отримання аргументів і результат з переданим значенням undefined теж undefined */
 
 var text = 'outside';
-function logIt(d) {
-  console.log(d);
+function logIt() {
+  console.log();
   var text = 'inside';
 }
-logIt(text);
+logIt();
