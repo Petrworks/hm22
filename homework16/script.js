@@ -24,5 +24,3 @@ const search = (event) => {
 // console.log(arrList);
 
 searchInput.addEventListener('keyup', search);
-
-/* Напишите функцию, которая создает нумерованный подсписок по клику на опцию li.
