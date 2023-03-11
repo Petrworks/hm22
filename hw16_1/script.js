@@ -10,7 +10,7 @@ const menu = document.querySelector('#menu');
 const removeSubMenu = () => {
   const menus = menu.querySelectorAll('ol');
   if (menus.length > 0) {
-    menus.forEach((item) => item.remove());
+    menus.forEach((item) => menus.remove());
   }
 };
 
@@ -21,7 +21,6 @@ const onClickHandler = (event) => {
   removeSubMenu();
 
   const itemName = target.textContent;
-
   const itemIngridients = INGREDIENTS[itemName];
 
   if (itemIngridients && Array.isArray(itemIngridients)) {

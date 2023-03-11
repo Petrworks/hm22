@@ -14,7 +14,7 @@ console.log(items);
 
 const search = (event) => {
   const searchValue = event.target.value.toUpperCase();
-  if ('' === searchValue) {
+  if (!searchValue) {
     return;
   }
   const foundItems = [...items].filter(
