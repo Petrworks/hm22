@@ -31,8 +31,12 @@ function makeClass() {
     class Boss extends Worker {
       constructor(name, surname, rate, days, salary, totalProfit) {
         super();
-        super.totalProfit = totalProfit;
-        super.salary = salary;
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+        this.totalProfit = totalProfit;
+        this.salary = salary;
       }
       getSalary() {
         return `${this.salary * this.totalProfit}`;
@@ -41,8 +45,12 @@ function makeClass() {
   }
   if (key === 'trainee') {
     class Trainee extends Worker {
-      constructor(name, surname, rate, days, salary) {
+      constructor(name, surname, rate, days) {
         super();
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
       }
     }
   }
@@ -56,7 +64,6 @@ for (obj of employees) {
         salary += rate * days;
       }
     }
-    console.log(salary);
     return salary;
   });
 }
