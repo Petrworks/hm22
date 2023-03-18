@@ -23,16 +23,17 @@ class Worker {
 
 class Boss extends Worker {
   #totalProfit = 1.1;
-  constructor(name, surname, rate, days, totalProfit) {
+  constructor(name, surname, rate, days) {
     super();
     this.name = name;
     this.surname = surname;
     this.rate = rate;
     this.days = days;
+    this.totalProfit = Boss.totalProfit;
   }
 
   getSalary() {
-    return `${this.rate * this.days * this.totalProfit}`;
+    return `${this.rate * this.days * Boss.totalProfit}`;
   }
 }
 class Trainee extends Worker {
