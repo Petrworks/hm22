@@ -11,6 +11,7 @@ class Worker {
   }
 
   getSalary() {
+    console.log(`${this.rate * this.days}`);
     return `${this.rate * this.days}`;
   }
   getInfo() {
@@ -18,52 +19,66 @@ class Worker {
   }
 }
 
-const worker1 = new Worker();
-
-console.log(worker1);
-worker1.getSalary();
-worker1.getInfo();
-
 /* Створіть клас Boss, який наслідується від класа Worker. Цей клас має ті ж самі властивості, що і Worker і плюс додаткова властивість totalProfit. Напишіть метод getSalary(), який рахує зарплату співробітника так само, як метод getSalary() класу Worker + 10% від прибутку (totalProfit) */
 
-function makeClass() {
-  if (key === 'worker') {
-    class Boss extends Worker {
-      constructor(name, surname, rate, days, salary, totalProfit) {
-        super();
-        this.name = name;
-        this.surname = surname;
-        this.rate = rate;
-        this.days = days;
-        this.totalProfit = totalProfit;
-        this.salary = salary;
-      }
-      getSalary() {
-        return `${this.salary * this.totalProfit}`;
-      }
-    }
+class Boss extends Worker {
+  constructor(name, surname, rate, days, totalProfit) {
+    super();
+    this.name = name;
+    this.surname = surname;
+    this.rate = rate;
+    this.days = days;
+    this.totalProfit = totalProfit;
   }
-  if (key === 'trainee') {
-    class Trainee extends Worker {
-      constructor(name, surname, rate, days) {
-        super();
-        this.name = name;
-        this.surname = surname;
-        this.rate = rate;
-        this.days = days;
-      }
+
+  getSalary() {
+    return `${this.rate * this.days * totalProfit}`;
+  }
+}
+class Trainee extends Worker {
+  constructor(name, surname, rate, days) {
+    super();
+    this.name = name;
+    this.surname = surname;
+    this.rate = rate;
+    this.days = days;
+  }
+  getSalary() {
+    if (employee.position === 'trainee' && employee.days <= '60') {
+      return `${this.rate * this.days * 0.7}`;
+    }
+    if (employee.position === 'trainee' && employee.days > '60') {
+      return `${this.rate * this.days}`;
     }
   }
 }
 
-for (obj of employees) {
-  Object.keys(obj).forEach((key) => {
-    let salary = 0;
-    if (key === 'worker' || key === 'trainee') {
-      for (let i = 0; i < employees.length; i++) {
-        salary += rate * days;
-      }
-    }
-    return salary;
-  });
+for (let employee of employees) {
+  if (employee.position === 'worker') {
+    new Worker(employee.name, employee.surname, employee.rate, employee.days);
+  }
+  if (employee.position === 'boss') {
+    new Boss(
+      employee.name,
+      employee.surname,
+      employee.rate,
+      employee.days,
+      (totalProfit = 1.1)
+    );
+  }
+  if (employee.position === 'trainee') {
+    new Trainee(employee.name, employee.surname, employee.rate, employee.days);
+  }
 }
+
+employees.forEach(function (employee) {
+  let salary = 0;
+  if (employee.position === 'worker') {
+    salary += employee.rate * employee.days;
+  }
+  console.log(salary);
+  return salary;
+});
+
+employees.getSalary();
+employees.getInfo();
