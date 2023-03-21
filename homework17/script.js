@@ -24,25 +24,19 @@ class Worker {
 class Boss extends Worker {
   #totalProfit = 1.1;
   constructor(name, surname, rate, days) {
-    super();
-    this.name = name;
-    this.surname = surname;
-    this.rate = rate;
-    this.days = days;
+    super(name, surname, rate, days);
     this.totalProfit = Boss.totalProfit;
   }
 
   getSalary() {
-    return `${this.rate * this.days * Boss.totalProfit}`;
+    const bossSal = salary + this.rate * this.days * this.#totalProfit;
+    console.log(bossSal);
+    return bossSal;
   }
 }
 class Trainee extends Worker {
   constructor(name, surname, rate, days) {
-    super();
-    this.name = name;
-    this.surname = surname;
-    this.rate = rate;
-    this.days = days;
+    super(name, surname, rate, days);
   }
   getSalary() {
     if (employee.position === 'trainee' && employee.days <= '60') {
@@ -56,24 +50,41 @@ class Trainee extends Worker {
 
 for (let employee of employees) {
   if (employee.position === 'worker') {
-    new Worker(employee.name, employee.surname, employee.rate, employee.days);
+    const worker = new Worker(
+      employee.name,
+      employee.surname,
+      employee.rate,
+      employee.days
+    );
+    console.log(worker);
   }
   if (employee.position === 'boss') {
-    new Boss(employee.name, employee.surname, employee.rate, employee.days);
+    const boss = new Boss(
+      employee.name,
+      employee.surname,
+      employee.rate,
+      employee.days
+    );
+    console.log(boss);
   }
   if (employee.position === 'trainee') {
-    new Trainee(employee.name, employee.surname, employee.rate, employee.days);
+    const trainee = new Trainee(
+      employee.name,
+      employee.surname,
+      employee.rate,
+      employee.days
+    );
+    console.log(trainee);
   }
 }
 
 employees.forEach(function (employee) {
   let salary = 0;
-  if (employee.position === 'worker') {
+  if (employee.position !== 'boss') {
     salary += employee.rate * employee.days;
   }
   console.log(salary);
   return salary;
 });
 
-employees.getSalary();
-employees.getInfo();
+worker.getSalary();
