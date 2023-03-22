@@ -48,43 +48,48 @@ class Trainee extends Worker {
   }
 }
 
-for (let employee of employees) {
-  if (employee.position === 'worker') {
-    const worker = new Worker(
-      employee.name,
-      employee.surname,
-      employee.rate,
-      employee.days
-    );
-    console.log(worker);
+const newEmployees = employees.map(function (employee) {
+  for (let employee of employees) {
+    if (employee.position === 'worker') {
+      const worker = new Worker(
+        employee.name,
+        employee.surname,
+        employee.rate,
+        employee.days
+      );
+      console.log(worker);
+      return worker;
+    }
+    if (employee.position === 'boss') {
+      const boss = new Boss(
+        employee.name,
+        employee.surname,
+        employee.rate,
+        employee.days
+      );
+      console.log(boss);
+      return boss;
+    }
+    if (employee.position === 'trainee') {
+      const trainee = new Trainee(
+        employee.name,
+        employee.surname,
+        employee.rate,
+        employee.days
+      );
+      console.log(trainee);
+      return trainee;
+    }
   }
-  if (employee.position === 'boss') {
-    const boss = new Boss(
-      employee.name,
-      employee.surname,
-      employee.rate,
-      employee.days
-    );
-    console.log(boss);
-  }
-  if (employee.position === 'trainee') {
-    const trainee = new Trainee(
-      employee.name,
-      employee.surname,
-      employee.rate,
-      employee.days
-    );
-    console.log(trainee);
-  }
-}
-
-employees.forEach(function (employee) {
-  let salary = 0;
-  if (employee.position !== 'boss') {
-    salary += employee.rate * employee.days;
-  }
-  console.log(salary);
-  return salary;
 });
 
-worker.getSalary();
+// employees.forEach(function (employee) {
+//   let salary = 0;
+//   if (employee.position !== 'boss') {
+//     salary += employee.rate * employee.days;
+//   }
+//   console.log(salary);
+//   return salary;
+// });
+
+// worker.getSalary();
