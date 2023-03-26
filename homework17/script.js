@@ -27,9 +27,9 @@ class Boss extends Worker {
     this.totalProfit = totalProfit;
   }
 
-  // getSalary() {
-  //   return this.rate * this.days + this.totalProfit * this.salary;
-  // }
+  getSalary() {
+    return this.rate * this.days;
+  }
 }
 
 class Trainee extends Worker {
