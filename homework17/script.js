@@ -62,7 +62,6 @@ const newEmployees = employees.map(function (employee) {
 });
 
 let sum = 0;
-
 const salary = employees.reduce(function (accumulator, currentValue) {
   if (employees.position !== 'boss') {
     return accumulator + currentValue.days * currentValue.rate;
