@@ -25,13 +25,18 @@ class Worker {
 /* Створіть клас Boss, який наслідується від класа Worker. Цей клас має ті ж самі властивості, що і Worker і плюс додаткова властивість totalProfit. Напишіть метод getSalary(), який рахує зарплату співробітника так само, як метод getSalary() класу Worker + 10% від прибутку (totalProfit) */
 
 class Boss extends Worker {
-  totalProfit = 1.1;
+  totalProfit = 0.1;
   salary = 1000; // не розумію як передати salary зовні
   constructor(name, surname, rate, days) {
     super(name, surname, rate, days);
   }
   getBossSalary() {
     return `${this.rate * this.days + this.salary * this.totalProfit}`;
+  }
+}
+class Trainee extends Worker {
+  constructor(name, surname, rate, days) {
+    super(name, surname, rate, days);
   }
 }
 
@@ -63,7 +68,7 @@ const newEmployees = employees.map(function (employee) {
 
 let sum = 0;
 const salary = employees.reduce(function (accumulator, currentValue) {
-  if (employees.position !== 'boss') {
+  if (employees.position !== 'boss' && employees.position !== 'trainee') {
     return accumulator + currentValue.days * currentValue.rate;
   }
 }, sum);
