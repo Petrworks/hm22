@@ -11,38 +11,30 @@ class Worker {
   }
 
   getSalary() {
-    // console.log(`${this.rate * this.days}`);
-    return `${this.rate * this.days}`;
+    if (this.position === 'trainee' && this.days <= 60) {
+      return `${this.rate * this.days * 0.7}`;
+    } else {
+      return `${this.rate * this.days}`;
+    }
   }
   getInfo() {
-    return `${this.name} ${this.surname} got ${this.rate * this.days}`;
+    return `${this.name} ${this.surname} got ${this.getSalary()}`;
   }
 }
 
 /* Створіть клас Boss, який наслідується від класа Worker. Цей клас має ті ж самі властивості, що і Worker і плюс додаткова властивість totalProfit. Напишіть метод getSalary(), який рахує зарплату співробітника так само, як метод getSalary() класу Worker + 10% від прибутку (totalProfit) */
 
 class Boss extends Worker {
-  constructor(name, surname, rate, days, totalProfit) {
-    super(name, surname, rate, days);
-    this.totalProfit = totalProfit;
-  }
-
-  getSalary() {
-    return this.rate * this.days;
-  }
-}
-
-class Trainee extends Worker {
+  totalProfit = 1.1;
+  salary = 1000; // не розумію як передати salary зовні
   constructor(name, surname, rate, days) {
     super(name, surname, rate, days);
   }
-  getSalary() {
-    if (this.days <= '60') {
-      return `${this.rate * this.days * 0.7}`;
-    }
-    return `${this.rate * this.days}`;
+  getBossSalary() {
+    return `${this.rate * this.days + this.salary * this.totalProfit}`;
   }
 }
+
 const newEmployees = employees.map(function (employee) {
   if (employee.position === 'worker') {
     const worker = new Worker(
@@ -51,6 +43,7 @@ const newEmployees = employees.map(function (employee) {
       employee.rate,
       employee.days
     );
+    console.log(worker.getInfo());
     console.log(worker.getSalary());
     return worker;
   }
@@ -59,31 +52,21 @@ const newEmployees = employees.map(function (employee) {
       employee.name,
       employee.surname,
       employee.rate,
-      employee.days,
-      1.1
-    );
-    console.log(boss.getSalary());
-    return boss;
-  }
-  if (employee.position === 'trainee') {
-    const trainee = new Trainee(
-      employee.name,
-      employee.surname,
-      employee.rate,
       employee.days
     );
-    console.log(trainee);
-    return trainee;
+
+    console.log(boss.getInfo());
+    console.log(boss.getBossSalary());
+    return boss;
   }
 });
 
-let salary = 0;
-employees.forEach(function (employee) {
-  if (employee.position !== 'boss') {
-    salary += employee.rate * employee.days;
+let sum = 0;
+
+const salary = employees.reduce(function (accumulator, currentValue) {
+  if (employees.position !== 'boss') {
+    return accumulator + currentValue.days * currentValue.rate;
   }
-  return salary;
-});
+}, sum);
+
 console.log(salary);
-
-console.log(this.worker);
