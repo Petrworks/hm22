@@ -1,7 +1,6 @@
 const container = document.querySelector('.container');
-createCard();
 
-function createCard() {
+function createCard(item) {
   const card = document.createElement('div');
   card.classList.add('card');
 
@@ -11,7 +10,7 @@ function createCard() {
   const cardTitle = document.createElement('div');
   cardTitle.classList.add('title');
   const cardTitleH1 = document.createElement('h1');
-  cardTitleH1.innerHTML = 'firstName lastName';
+  cardTitleH1.innerHTML = item.name;
   cardTitle.append(cardTitleH1);
 
   const cardStatus = document.createElement('div');
@@ -20,7 +19,7 @@ function createCard() {
   cardLiveStatus.classList.add('live-status');
 
   const cardStatusP = document.createElement('p');
-  const cardStatusPText = document.createTextNode('species -- status');
+  const cardStatusPText = document.createTextNode(item.status);
   cardStatus.append(cardLiveStatus);
   cardStatusP.append(cardStatusPText);
   cardStatus.append(cardStatusP);
@@ -29,7 +28,7 @@ function createCard() {
 
   const cardContent = document.createElement('div');
   cardContent.classList.add('content');
-  const cardContentText = document.createTextNode('Their location');
+  const cardContentText = document.createTextNode(item.location.name);
   cardContent.append(cardContentText);
   cardInfo.append(cardContent);
 
@@ -38,8 +37,7 @@ function createCard() {
   const cardImage = document.createElement('div');
   cardImage.classList.add('card-image');
   const image = document.createElement('img');
-  image.src =
-    'https://static.remove.bg/remove-bg-web/bf554ca6716508caedc52f1ac289b1eec29b6734/assets/start_remove-79a4598a05a77ca999df1dcb434160994b6fde2c3e9101984fb1be0f16d0a74e.png';
+  image.src = item.image;
   image.alt = 'Some image';
   cardImage.append(image);
   card.append(cardImage);
@@ -47,9 +45,14 @@ function createCard() {
   container.append(card);
 }
 
-fetch('https://rickandmortyapi.com/api/character/1,5,2,67')
+const generateArray = (length, max) =>
+  [...new Array(length)].map(() => Math.round(Math.random() * max)).join(',');
+
+const randomArr = generateArray(10, 826);
+
+fetch('https://rickandmortyapi.com/api/character/' + randomArr)
   .then((res) => {
     console.log(res);
     return res.json();
   })
-  .then((res) => console.log(res));
+  .then((res) => res.forEach((item) => createCard(item)));
